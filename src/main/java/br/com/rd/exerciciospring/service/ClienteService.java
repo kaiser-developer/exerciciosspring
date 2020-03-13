@@ -22,4 +22,8 @@ public class ClienteService {
         cliente.setTelefone(clienteDTO.getTelefone());
         return repository.save(cliente);
     }
+
+    public Cliente fazerLogin(String email, String senha){
+        return repository.findByEmailAndSenha(email, senha);
+    }
 }

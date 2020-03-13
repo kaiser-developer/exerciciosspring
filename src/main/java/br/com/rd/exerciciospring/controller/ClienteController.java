@@ -18,4 +18,9 @@ public class ClienteController {
     public Cliente criarCliente(@RequestBody ClienteDTO clienteDTO){
         return service.criarCliente(clienteDTO);
     }
+
+    @PostMapping("login-cliente")
+    public Cliente realizarLogin(@RequestBody String[] dados){
+        return service.fazerLogin(dados[0], dados[1]);
+    }
 }
